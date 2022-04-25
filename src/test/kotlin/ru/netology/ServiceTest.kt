@@ -1,8 +1,6 @@
 package ru.netology
 
-import org.junit.After
 import org.junit.Test
-
 import org.junit.Assert.*
 import org.junit.Before
 import ru.netology.exceptions.QuantityOfChatsExceeded
@@ -138,7 +136,7 @@ class ServiceTest {
     @Test
     fun getNewMessagesByDeletedChat() {
         addMessages()
-        Service.deleteChat(101,0)
+        Service.deleteChat(101, 0)
         val expectedCountOfNewMessagesFor101InChat0 = 0
         val expectedCountOfNewMessagesFor202InChat0 = 0
         assertEquals(expectedCountOfNewMessagesFor101InChat0, Service.getNewMessagesByChat(101, 0).size)
